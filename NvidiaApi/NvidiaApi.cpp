@@ -77,8 +77,6 @@ int main()
 		return 2;
 	}
 
-	std::cout << "Deneme" << std::endl;
-
 	// initialize NvAPI library, call it once before calling any other NvAPI functions
 	(*NvAPI_Initialize)();
 	NV_GPU_THERMAL_SETTINGS 		 nvgts;
