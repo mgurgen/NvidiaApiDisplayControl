@@ -1,10 +1,5 @@
-#include <windows.h>
-#include "stdafx.h"
 #include <iostream>
 #include "NvCpl.h"
-#include <stdio.h>
-#include <conio.h>
-
 
 #define NVAPI_MAX_THERMAL_SENSORS_PER_GPU 3
 
@@ -51,7 +46,7 @@ typedef int(*NvAPI_GPU_GetThermalSettings_t)(int *handle, int sensorIndex, NV_GP
 
 int main()
 {
-	LPCWSTR libraryName = L"nvapi64.dll";
+	LPCSTR libraryName = "nvapi64.dll";
 	HMODULE hmod = ::LoadLibrary(libraryName);
 	if (hmod == NULL)
 	{
@@ -81,6 +76,8 @@ int main()
 		std::cerr << "Couldn't get functions in nvapi.dll" << std::endl;
 		return 2;
 	}
+
+	std::cout << "Deneme" << std::endl;
 
 	// initialize NvAPI library, call it once before calling any other NvAPI functions
 	(*NvAPI_Initialize)();
